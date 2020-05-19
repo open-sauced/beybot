@@ -5,7 +5,7 @@
   <body>
     <div id="content">
     </div>
-    <audio controls muted="muted" autoplay></audio>
+    <audio style="display:none" controls muted="muted" autoplay></audio>
     <script type="text/javascript">
         ComfyJS.Init( "bdougieYO" );
         ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
@@ -28,6 +28,7 @@
             var img = new Image(); 
             img.src = 'https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif'; 
             document.getElementById('content').appendChild(img); 
+            wow.volume = 0.3;
             wow.play()
         }  
         function removeGif() { 
