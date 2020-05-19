@@ -1,7 +1,7 @@
-# beybot
-This is a twitch bot built on the [instafluff/ComfyJS](https://github.com/instafluff/ComfyJS) (a wrapper around [tmi.js](https://github.com/tmijs/tmi.js)).
 
-![bey](https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif)
+![beybot](https://user-images.githubusercontent.com/5713670/82376532-1e160780-99d7-11ea-86ee-b4d316507e8a.png)
+
+This is a twitch bot built on the [instafluff/ComfyJS](https://github.com/instafluff/ComfyJS) (a wrapper around [tmi.js](https://github.com/tmijs/tmi.js)).
 
 # Usage
 
