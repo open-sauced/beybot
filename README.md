@@ -10,10 +10,10 @@ This is a twitch bot built on the [instafluff/ComfyJS](https://github.com/instaf
 2. Send message `!yo` in the [chat](https://www.twitch.tv/popout/bdougieyo/chat) to test.
 3. Hi-5 yourself.
 
-## in browser sandbox
-1. Visit https://mutualfun.live
+## in browser
+1. Visit https://mutualfun.github.io/beybot/
 2. Send message `!yo` in the [chat](https://www.twitch.tv/popout/bdougieyo/chat) to test.
-3. Nod in agreement
+3. Nod in agreement.
 
 ## local usage
 1. Download or clone this project.
