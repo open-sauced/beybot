@@ -20,3 +20,10 @@ This is a twitch bot built on the [instafluff/ComfyJS](https://github.com/instaf
 2. Open the index.html in the browser
 3. Send message `!yo` in the [chat](https://www.twitch.tv/popout/bdougieyo/chat) to test.
 4. Add new commands and open a PR here. 
+
+# Use in your Twitch Stream.
+
+1. Fork this repo
+2. Replace your Twitch handle [here](https://github.com/mutualfun/beybot/blob/f652a095566f9781f33d1913d6478a7f96a17b4f/index.html#L10).
+3. Enable GitHub pages on your forked repo. Ensure your site deployments to the master branch.
+4. Add a browser source element to your streaming platform (OBS or similar) that points to your username.github.io/beybot. 
