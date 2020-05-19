@@ -23,6 +23,8 @@ This is a twitch bot built on the [instafluff/ComfyJS](https://github.com/instaf
 
 # Use in your Twitch Stream.
 
+![fork](https://upload.wikimedia.org/wikipedia/commons/3/38/GitHub_Fork_Button.png)
+
 1. Fork this repo
 2. Replace your Twitch handle [here](https://github.com/mutualfun/beybot/blob/f652a095566f9781f33d1913d6478a7f96a17b4f/index.html#L10).
 3. Enable GitHub pages on your forked repo. Ensure your site deployments to the master branch.
