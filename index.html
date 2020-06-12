@@ -24,25 +24,32 @@
 
         var wow = new Audio("horn.wav" ) ;
 
-        function addGif(user) { 
-            removeGif()
-          
-            var img = new Image(); 
-            img.src = 'https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif'; 
-            
-            var title = document.createElement('h1')
-            title.innerHTML = user + " is hyped!"; 
-           
-            var content = document.getElementById('content')
-            content.appendChild(title); 
-            title.style.color = 'purple';
+        function addGif(user) {
+          removeGif(); // ensure that any previous gif is removed
 
-            content.appendChild(img); 
-            wow.play()
+          var container = document.createElement('div');
+
+          var img = new Image();
+          img.src = 'https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif';
+
+          title.innerHTML = user + " is hype!";
+
+          var content = document.getElementById('content');
+          content.appendChild(title);
+          title.style.color = 'purple';
+
+          container.appendChild(img);
+          content.appendChild(container);
+          wow.play();
+          setTimeout(removeGif, 5000);
+        }
+  
+        function removeGif() {
+          var contentElement = document.getElementById('content');
+          if (contentEement.firstElementChild) {
+            contentElement.firstElementChild.remove();
+          }
         }  
-        function removeGif() { 
-            document.getElementById('content').firstElementChild.remove()
-        }   
     </script>
   </body>
 </html>
