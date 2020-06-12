@@ -27,22 +27,18 @@
         function addGif() { 
             var img = new Image(); 
             img.src = 'https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif'; 
-            document.getElementById('content').appendChild(img); 
+            
+            var title = document.createElement('h1')
+            title.innerHTML = user + " is hyped YO!"; 
+           
+            var content = document.getElementById('content')
+            content.appendChild(title); 
+            content.appendChild(img); 
             wow.play()
         }  
         function removeGif() { 
             document.getElementById('content').firstElementChild.remove()
-        }  
-
-        var x = document.getElementById("myAudio"); 
-
-        function playAudio() { 
-            x.play(); 
-        } 
-
-        function pauseAudio() { 
-            x.pause(); 
-        } 
+        }   
     </script>
   </body>
 </html>
