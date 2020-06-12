@@ -14,7 +14,7 @@
           }
           if( command == "yo" ) {
             console.log( "!yo was typed in chat" );
-            new addGif()
+            new addGif(user)
             setTimeout(removeGif, 5000)
           }
         }
@@ -24,7 +24,7 @@
 
         var wow = new Audio("horn.wav" ) ;
 
-        function addGif() { 
+        function addGif(user) { 
             var img = new Image(); 
             img.src = 'https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif'; 
             
