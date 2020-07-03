@@ -7,33 +7,56 @@
     </div>
     <audio style="display: none" controls muted="muted" autoplay></audio>
     <script type="text/javascript">
+        var pewAudio = new Audio("horn.wav");
+        var beyGif = 'https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif';
+        var welcomeGif = 'https://media.giphy.com/media/l3V0doGbp2EDaLHJC/giphy.gif';
+        var pizzaGif = 'https://media.giphy.com/media/3o6nUXaNE4wdhq8Foc/giphy.gif';
+
         ComfyJS.Init( "bdougieYO" );
         ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
           if( flags.broadcaster && command == "test" ) {
             console.log( "!test was typed in chat" );
           }
+
           if( command == "yo" ) {
             console.log( "!yo was typed in chat" );
-            new addGif(user)
+            new gifAlert(user, beyGif, pewAudio, command)
+            setTimeout(removeGif, 5000)
+          }
+
+          if( command == "welcome" ) {
+            console.log( "!welcome got a chat" );
+            new gifAlert(message, welcomeGif, pewAudio, command)
+            setTimeout(removeGif, 5000)
+          }
+
+          if( flags.broadcaster && command == "pizza" ) {
+            console.log( "!pizza was typed in chat" );
+            new gifAlert(message, pizzaGif, pewAudio, command)
             setTimeout(removeGif, 5000)
           }
         }
+
         ComfyJS.onChat = ( user, message, flags, self, extra ) => {
           console.log( user + ":", message );
         }
 
-        var wow = new Audio("horn.wav" ) ;
+        var generateTitle = {
+          yo: " is hype!",
+          welcome: " needs a welcome!",
+          pizza: " needed a pizza party!"
+        }
 
-        function addGif(user) {
+        function gifAlert(user, gif, audio, type) {
           removeGif(); // ensure that any previous gif is removed
 
           var container = document.createElement('div');
 
           var img = new Image();
-          img.src = 'https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif';
+          img.src = gif;
 
           var title = document.createElement('h1')
-          title.innerHTML = user + " is hype!";
+          title.innerHTML = user + generateTitle[type];
 
           var content = document.getElementById('content');
           content.appendChild(title);
@@ -42,16 +65,16 @@
 
           container.appendChild(img);
           content.appendChild(container);
-          wow.play();
+          audio.play();
           setTimeout(removeGif, 5000);
         }
-  
+
         function removeGif() {
           var contentElement = document.getElementById('content');
           if (contentElement.firstElementChild) {
             contentElement.firstElementChild.remove();
           }
-        }  
+        }
     </script>
   </body>
 </html>
