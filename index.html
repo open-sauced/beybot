@@ -3,7 +3,7 @@
     <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
   </head>
   <body>
-    <div id="content">
+    <div style="display:grid;justify-content:center;width:1040px" id="content">
     </div>
     <audio style="display: none" controls muted="muted" autoplay></audio>
     <script type="text/javascript">
@@ -38,6 +38,7 @@
           var content = document.getElementById('content');
           content.appendChild(title);
           title.style.color = 'purple';
+          title.style.textAlign = 'center';
 
           container.appendChild(img);
           content.appendChild(container);
