@@ -2,8 +2,20 @@
   <head>
     <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
   </head>
+  <style>
+    .alerts {
+      display: grid;
+      justify-content: center;
+      width: 1040px
+    }
+
+    h1 {
+      color: purple;
+      text-align: center;
+    }
+  </style>
   <body>
-    <div style="display:grid;justify-content:center;width:1040px" id="content">
+    <div class="alerts" id="content">
     </div>
     <audio style="display: none" controls muted="muted" autoplay></audio>
     <script type="text/javascript">
@@ -60,8 +72,6 @@
 
           var content = document.getElementById('content');
           content.appendChild(title);
-          title.style.color = 'purple';
-          title.style.textAlign = 'center';
 
           container.appendChild(img);
           content.appendChild(container);
