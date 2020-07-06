@@ -5,7 +5,7 @@ This is a twitch bot built on the [ComfyJS](https://github.com/instafluff/ComfyJ
 
 # How can I implement this in my chat?
 
-Before I jump into I code, I need to share some of the streaming basics.
+Before I jump into the code, I need to share some of the streaming basics.
 
 ## OBS Studio
 
