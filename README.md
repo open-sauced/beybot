@@ -76,7 +76,7 @@ https://www.twitch.tv/bdougieyo
 
 Go ahead and type !yo in the chat while OBS is open and weep tears of joy, because that was hopefully easy. If it wasn’t let me know in the comments below. 
 
-[gif of this happening]()
+[gif of this happening]
 
 That is it. You are now equipped to extend for new commands for you and your chat to interact. 
 
