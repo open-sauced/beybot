@@ -20,6 +20,7 @@
     <audio style="display: none" controls muted="muted" autoplay></audio>
     <script type="text/javascript">
         var pewAudio = new Audio("horn.wav");
+        var magicChime = new Audio("Magic_Chime.mp3")
         var beyGif = 'https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif';
         var welcomeGif = 'https://media.giphy.com/media/l3V0doGbp2EDaLHJC/giphy.gif';
         var pizzaGif = 'https://media.giphy.com/media/3o6nUXaNE4wdhq8Foc/giphy.gif';
@@ -38,13 +39,13 @@
 
           if( command == "welcome" ) {
             console.log( "!welcome was typed in the chat" );
-            new gifAlert(message, welcomeGif, pewAudio, command)
+            new gifAlert(message, welcomeGif, magicChime, command)
             setTimeout(removeGif, 5000)
           }
 
           if( flags.broadcaster && command == "pizza" ) {
             console.log( "!pizza was typed in chat" );
-            new gifAlert(message, pizzaGif, pewAudio, command)
+            new gifAlert(message, pizzaGif, magicChime, command)
             setTimeout(removeGif, 5000)
           }
         }
