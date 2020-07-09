@@ -19,11 +19,14 @@
     </div>
     <audio style="display: none" controls muted="muted" autoplay></audio>
     <script type="text/javascript">
-        var pewAudio = new Audio("horn.wav");
-        var magicChime = new Audio("Magic_Chime.mp3")
-        var beyGif = 'https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif';
-        var welcomeGif = 'https://media.giphy.com/media/l3V0doGbp2EDaLHJC/giphy.gif';
-        var pizzaGif = 'https://media.giphy.com/media/3o6nUXaNE4wdhq8Foc/giphy.gif';
+        /* Sound Effects */
+        const pewAudio = new Audio("horn.wav");
+        const magicChime = new Audio("Magic_Chime.mp3")
+
+        /* GIFs */
+        const beyGif = 'https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif';
+        const welcomeGif = 'https://media.giphy.com/media/l3V0doGbp2EDaLHJC/giphy.gif';
+        const pizzaGif = 'https://media.giphy.com/media/3o6nUXaNE4wdhq8Foc/giphy.gif';
 
         ComfyJS.Init( "bdougieYO" );
         ComfyJS.onCommand = ( user, command, message, flags, extra ) => {
@@ -54,7 +57,7 @@
           console.log( user + ":", message );
         }
 
-        var generateTitle = {
+        const generateTitle = {
           yo: " is hype!",
           welcome: " needs a welcome!",
           pizza: " needed a pizza party!"
@@ -63,15 +66,15 @@
         function gifAlert(user, gif, audio, type) {
           removeGif(); // ensure that any previous gif is removed
 
-          var container = document.createElement('div');
+          const container = document.createElement('div');
 
-          var img = new Image();
+          const img = new Image();
           img.src = gif;
 
-          var title = document.createElement('h1')
+          const title = document.createElement('h1')
           title.innerHTML = user + generateTitle[type];
 
-          var content = document.getElementById('content');
+          const content = document.getElementById('content');
           content.appendChild(title);
 
           container.appendChild(img);
@@ -81,7 +84,7 @@
         }
 
         function removeGif() {
-          var contentElement = document.getElementById('content');
+          const contentElement = document.getElementById('content');
           if (contentElement.firstElementChild) {
             contentElement.firstElementChild.remove();
           }
