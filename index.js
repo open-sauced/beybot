@@ -1,3 +1,8 @@
+/* Config */
+const twitchTvHandle = "bdougieYO";
+const repoOwner = "sgrove";
+const repoName = "blog";
+
 /* OneGraph websocket subscriptions */
 const OneGraphSubscriptionPackage = window["onegraph-subscription-client"];
 const OneGraphAuthPackage = window["onegraph-auth"];
@@ -54,7 +59,7 @@ const beyGif = "https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif";
 const welcomeGif = "https://media.giphy.com/media/l3V0doGbp2EDaLHJC/giphy.gif";
 const pizzaGif = "https://media.giphy.com/media/3o6nUXaNE4wdhq8Foc/giphy.gif";
 
-ComfyJS.Init("bdougieYO");
+ComfyJS.Init(twitchTvHandle);
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
   if (flags.broadcaster && command == "test") {
     console.log("!test was typed in chat");
@@ -180,8 +185,6 @@ const setup = async () => {
   let start = () => {
     checkLogin(auth, "github", () => {
       loginButton.remove();
-      const repoOwner = "sgrove";
-      const repoName = "blog";
       console.log("Logged into GitHub, starting subscriptions...");
       startGitHubSubscription(auth, client, repoOwner, repoName);
     });
