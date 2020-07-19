@@ -28,7 +28,7 @@ If you would like to see this chat command working live on the air here is a cli
 
 **Step 1: In your fork replace the Twitch channel name.**
 
-In the [index.html](https://github.com/open-sauced/beybot/blob/HEAD/index.html#L27) of the beybot repo, you will need to replace my handle, "bdougieYO" with your Twitch handle. 
+In the [index.js](https://github.com/open-sauced/beybot/blob/HEAD/index.js#L2) of the beybot repo, you will need to replace my handle, "bdougieYO" with your Twitch handle. 
 
 The name is the thing you will need to change:
 
