@@ -56,6 +56,7 @@ function gifAlert(user, gif, audio, type) {
 
   const title = document.createElement("h1");
   title.innerHTML = user + generateTitle[type];
+  title.classList.add("text-shadows")
 
   const content = document.getElementById("content");
   content.appendChild(title);
