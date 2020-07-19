@@ -13,13 +13,6 @@ img {
   border-radius: 8px;
 }
 
-h1 {
-  background: -webkit-linear-gradient(#f6d809, #d95c41);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  /* font-family: 'Courier'; */
-}
-
 .alerts {
   display: grid;
   justify-content: center;
