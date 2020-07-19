@@ -1,7 +1,5 @@
 /* Config */
 const twitchTvHandle = "bdougieYO";
-const repoOwner = "sgrove";
-const repoName = "blog";
 
 /* Sound Effects */
 const pewAudio = new Audio("horn.wav");
