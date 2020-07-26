@@ -1,5 +1,12 @@
 /* Config */
 const twitchTvHandle = "bdougieYO";
+const PAUSE_DURATION = 30 * 1000; // 30 seconds
+const DISPLAY_DURATION = 10 * 1000; // 10 seconds
+
+/* DOM */
+const container = document.querySelector(".alerts");
+const img = new Image();
+const queue = new Queue();
 
 /* Sound Effects */
 const pewAudio = new Audio("horn.wav");
@@ -10,28 +17,32 @@ const beyGif = "https://media.giphy.com/media/VxkNDa92gcsRq/giphy.gif";
 const welcomeGif = "https://media.giphy.com/media/l3V0doGbp2EDaLHJC/giphy.gif";
 const pizzaGif = "https://media.giphy.com/media/3o6nUXaNE4wdhq8Foc/giphy.gif";
 
+
+// Resolve promise after duration
+const wait = async duration => {
+  return new Promise(resolve => setTimeout(resolve, duration));
+};
+
 ComfyJS.Init(twitchTvHandle);
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
-  if (flags.broadcaster && command == "test") {
-    console.log("!test was typed in chat");
-  }
+  console.log(`!${command} was typed in chat`);
 
   if (command == "yo") {
-    console.log("!yo was typed in chat");
     new gifAlert(user, beyGif, pewAudio, command);
-    setTimeout(removeGif, 5000);
   }
 
   if (command == "welcome") {
-    console.log("!welcome was typed in the chat");
     new gifAlert(message, welcomeGif, magicChime, command);
-    setTimeout(removeGif, 5000);
   }
 
   if (flags.broadcaster && command == "pizza") {
-    console.log("!pizza was typed in chat");
     new gifAlert(message, pizzaGif, magicChime, command);
-    setTimeout(removeGif, 5000);
+  }
+
+  if (flags.broadcaster && command == "pause") {
+    // Clear GIF queue and pause for PAUSE_DURATION
+    queue.clear();
+    queue.pause(PAUSE_DURATION);
   }
 };
 
@@ -43,33 +54,22 @@ const generateTitle = {
   yo: " is hype!",
   welcome: " needs a welcome!",
   pizza: " needed a pizza party!",
-  starred: " starred us, like we knew they would!",
 };
 
 function gifAlert(user, gif, audio, type) {
-  removeGif(); // ensure that any previous gif is removed
+  queue.add(async () => {
+    audio.play();
+    container.innerHTML = `
+      <h1 class="text-shadows">${user + generateTitle[type]}</h1>
+      <img src="${gif}" />
+    `;
+    container.style.opacity = 1;
 
-  const container = document.createElement("div");
+    await wait(DISPLAY_DURATION);
 
-  const img = new Image();
-  img.src = gif;
+    if (!queue.isLooping) {
+      container.style.opacity = 0;
+    }
 
-  const title = document.createElement("h1");
-  title.innerHTML = user + generateTitle[type];
-  title.classList.add("text-shadows")
-
-  const content = document.getElementById("content");
-  content.appendChild(title);
-
-  container.appendChild(img);
-  content.appendChild(container);
-  audio.play();
-  setTimeout(removeGif, 5000);
-}
-
-function removeGif() {
-  const contentElement = document.getElementById("content");
-  if (contentElement.firstElementChild) {
-    contentElement.firstElementChild.remove();
-  }
+  });
 }
