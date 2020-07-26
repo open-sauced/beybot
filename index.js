@@ -4,8 +4,9 @@ const PAUSE_DURATION = 30 * 1000; // 30 seconds
 const DISPLAY_DURATION = 10 * 1000; // 10 seconds
 
 /* DOM */
-const container = document.querySelector(".gif");
+const container = document.querySelector(".alerts");
 const img = new Image();
+const queue = new Queue();
 
 /* Sound Effects */
 const pewAudio = new Audio("horn.wav");
