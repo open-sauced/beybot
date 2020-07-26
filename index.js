@@ -47,7 +47,6 @@ const generateTitle = {
   yo: " is hype!",
   welcome: " needs a welcome!",
   pizza: " needed a pizza party!",
-  starred: ` starred ${repoName}, like we knew they would!`,
 };
 
 function gifAlert(user, gif, audio, type) {
