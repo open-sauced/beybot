@@ -24,7 +24,7 @@ Everything you need to make a bot run lives in my open-sauced/beybot repo, linke
 
 If you would like to see this chat command working live on the air here is a clip of me interacting with the basic `!yo` command.
 
-![!yo in the wild](https://user-images.githubusercontent.com/20134767/86605284-58be0a00-bf5b-11ea-85a4-344a14672519.gif)
+![!yo in the wild](https://user-images.githubusercontent.com/5713670/88496209-4db23480-cf71-11ea-83c9-8c9b9fbc82d8.gif)
 
 **Step 1: In your fork replace the Twitch channel name.**
 
