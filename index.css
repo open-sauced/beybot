@@ -3,7 +3,7 @@ body {
   font-size: .5rem;
   font-weight: 300;
   font-size: 1.25rem;
-  display: flex;
+  display: grid;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
