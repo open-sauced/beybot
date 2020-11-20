@@ -23,6 +23,10 @@ const wait = async duration => {
   return new Promise(resolve => setTimeout(resolve, duration));
 };
 
+const pauseSpotify = () => {
+  fetch("https://serve.onegraph.com/graphql?app_id=cdf2ebe1-3ad3-408a-81c0-1ed675d76411", {body: '{"doc_id": "10fccd15-1a55-4a27-877a-a63106b4bd11"}', method: "POST"})
+}
+
 ComfyJS.Init(twitchTvHandle);
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
   console.log(`!${command} was typed in chat`);
@@ -44,7 +48,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     setTimeout(() => {
       // Well, stop it after 2.5 seconds...
       // Pause the player
-      fetch("https://serve.onegraph.com/graphql?app_id=cdf2ebe1-3ad3-408a-81c0-1ed675d76411", {body: '{"doc_id": "10fccd15-1a55-4a27-877a-a63106b4bd11"}', method: "POST"})
+      pauseSpotify();
     }, EVADE_THE_DMCA_BAN_LENGTH)
   }
 
@@ -67,6 +71,7 @@ const generateTitle = {
   yo: " is hype!",
   welcome: " needs a welcome!",
   pizza: " needed a pizza party!",
+  music: " stopped the music!"
 };
 
 function gifAlert(user, gif, audio, type) {
