@@ -34,10 +34,18 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   if (command == "welcome") {
     new gifAlert(message, welcomeGif, magicChime, command);
   }
-  
+  // Ok, ready!
   if(command == "music") {
     new gifAlert(user, beyGif, pewAudio, command);
-    fetch("https://serve.onegraph.com/graphql?app_id=cdf2ebe1-3ad3-408a-81c0-1ed675d76411", {body: '{"doc_id": "10fccd15-1a55-4a27-877a-a63106b4bd11"}', method: "POST"})
+    // Please don't stop the music
+    fetch("https://serve.onegraph.com/graphql?app_id=cdf2ebe1-3ad3-408a-81c0-1ed675d76411", {body: '{"doc_id": "e5e25f29-7862-4f23-8f53-8fb4373a0672"}', method: "POST"})
+
+    const EVADE_THE_DMCA_BAN_LENGTH = 2500;
+    setTimeout(() => {
+      // Well, stop it after 2.5 seconds...
+      // Pause the player
+      fetch("https://serve.onegraph.com/graphql?app_id=cdf2ebe1-3ad3-408a-81c0-1ed675d76411", {body: '{"doc_id": "10fccd15-1a55-4a27-877a-a63106b4bd11"}', method: "POST"})
+    }, EVADE_THE_DMCA_BAN_LENGTH)
   }
 
   if (flags.broadcaster && command == "pizza") {
