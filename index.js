@@ -34,6 +34,11 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
   if (command == "welcome") {
     new gifAlert(message, welcomeGif, magicChime, command);
   }
+  
+  if(command == "music") {
+    new gifAlert(user, beyGif, pewAudio, command);
+    fetch("https://serve.onegraph.com/graphql?app_id=cdf2ebe1-3ad3-408a-81c0-1ed675d76411", {body: '{"doc_id": "10fccd15-1a55-4a27-877a-a63106b4bd11"}', method: "POST"})
+  }
 
   if (flags.broadcaster && command == "pizza") {
     new gifAlert(message, pizzaGif, magicChime, command);
