@@ -1,5 +1,5 @@
 /* Config */
-const twitchTvHandle = "bdougieYO";
+const twitchTvHandle = "githubeducation";
 const PAUSE_DURATION = 30 * 1000; // 30 seconds
 const DISPLAY_DURATION = 10 * 1000; // 10 seconds
 
