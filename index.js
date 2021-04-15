@@ -58,7 +58,6 @@ const generateTitle = {
   yo: " is hype!",
   welcome: " needs a welcome!",
   pizza: " needed a pizza party!",
-  music: " stopped the music!"
 };
 
 function gifAlert(user, gif, audio, type) {
