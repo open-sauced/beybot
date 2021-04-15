@@ -46,7 +46,7 @@ If you do not have a Twitch account but would like to test this out, you can tes
 
 If you are unfamiliar, GitHub provides a low effort way for you to host simple HTML files as a webpage using their github.io domain. You will need to go to your repo settings to set up a GitHub Page for your forked repo. You can learn more about GitHub Pages at pages.github.com.
 
-![](https://paper-attachments.dropbox.com/s_202334A481577855209C92DA29E80CC6349876B8BAA86FB00EF2859B2EC0BDD6_1594016982976_Screenshot+2020-07-05+23.27.44.png)
+![gh pages setup](https://user-images.githubusercontent.com/5713670/114797362-03701e00-9d61-11eb-9bbe-1b9fdda3a816.png)
 
 Your set up for GitHub Pages should like the above and provide a ✅ when ready to view.  If this site requires more to build than a single HTML file, you could also check the deploy environments page to check the status of the deploy.  These settings are found on the sidebar of your repo's home page.
 
